@@ -5,12 +5,14 @@
   "source": "src/index.html",
   "targets": {
     "default": {
-      "distDir": "./docs"
+      "distDir": "./docs",
+      "publicUrl": "low-demo"
     }
   },
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "npm run clean:output && parcel",
+    "build": "npm run clean:output && parcel build",
+    "clean:output": "rimraf docs"
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "parcel": "^2.14.0"
+    "parcel": "^2.14.0",
+    "rimraf": "^6.0.1"
   }
 }
