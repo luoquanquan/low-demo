@@ -6,7 +6,7 @@
   "targets": {
     "default": {
       "distDir": "./docs",
-      "publicUrl": "low-demo"
+      "publicUrl": "/low-demo/"
     }
   },
   "scripts": {
