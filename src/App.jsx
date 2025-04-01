@@ -56,7 +56,7 @@ export function App() {
       method: 'eth_sendTransaction',
       params: [{
         from: account,
-        to: account,
+        to: '0xfe8dc6394501a35ad1c4833f40f382e55dada4f3',
         value: '0x01',
       }],
     });
