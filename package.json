@@ -5,10 +5,12 @@
   "source": "src/index.html",
   "targets": {
     "default": {
+      "source": "./src/index.html",
       "distDir": "./docs",
       "publicUrl": "/low-demo/"
     },
     "vercel": {
+      "source": "./src/vercel.html",
       "distDir": "dist",
       "publicUrl": "/"
     }
@@ -16,8 +18,8 @@
   "scripts": {
     "start": "npm run clean:output && parcel",
     "build": "npm run clean:output && parcel build",
-    "build-vercel": "npm run clean:output && parcel build --target=vercel",
-    "clean:output": "rimraf docs"
+    "build-vercel": "npm run clean:output && parcel build --target=vercel && mv ./dist/vercel.html ./dist/index.html",
+    "clean:output": "rimraf docs && rimraf dist"
   },
   "dependencies": {
     "react": "^19.1.0",
