@@ -16,6 +16,8 @@ const Button = ({onClick, setLoading,  children, ...rest}) => {
   return <button onClick={strongOnClick} {...rest}>{children}</button>
 }
 
+const  ethereum = window.ethereum || window.okxwallet
+
 export function App() {
   const [account, setAccount] = useState('')
   const [loading, setLoading] = useState(false)
@@ -25,7 +27,7 @@ export function App() {
     setAccount(address);
   }
   
-  useEffect(connect, []);
+  useEffect(() => {connect()}, []);
   
   const disConnect = async () => {
     await ethereum.request({method: 'wallet_disconnect'})
