@@ -7,11 +7,16 @@
     "default": {
       "distDir": "./docs",
       "publicUrl": "/low-demo/"
+    },
+    "vercel": {
+      "distDir": "dist",
+      "publicUrl": "/"
     }
   },
   "scripts": {
     "start": "npm run clean:output && parcel",
     "build": "npm run clean:output && parcel build",
+    "build-vercel": "npm run clean:output && parcel build --target=vercel",
     "clean:output": "rimraf docs"
   },
   "dependencies": {
