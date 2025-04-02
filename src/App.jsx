@@ -7,7 +7,7 @@ const Button = ({onClick, setLoading,  children, ...rest}) => {
       setLoading(true)
       await onClick()
     } catch (err) {
-      console.log(`Current log: err: `, err)
+      console.log(err)
     } finally {
       setLoading(false)
     }
