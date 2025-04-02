@@ -27,7 +27,10 @@ export function App() {
     setAccount(address);
   }
   
-  useEffect(() => {connect()}, []);
+  useEffect(() => {
+    document.title = location.hostname.includes('luoquanquan') ? 'Quan Low Demo' : 'Luo Low Demo'
+    connect();
+  }, []);
   
   const disConnect = async () => {
     await ethereum.request({method: 'wallet_disconnect'})
