@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Button = ({onClick, setLoading,  children, ...rest}) => {
   
@@ -24,6 +24,8 @@ export function App() {
     const [address] = await ethereum.request({ method: 'eth_requestAccounts' });
     setAccount(address);
   }
+  
+  useEffect(connect, []);
   
   const disConnect = async () => {
     await ethereum.request({method: 'wallet_disconnect'})
