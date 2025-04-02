@@ -28,7 +28,6 @@ export function App() {
   }
   
   useEffect(() => {
-    document.title = location.hostname.includes('luoquanquan') ? 'Quan Low Demo' : 'Luo Low Demo'
     connect();
   }, []);
   

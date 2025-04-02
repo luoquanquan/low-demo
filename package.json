@@ -16,10 +16,9 @@
     }
   },
   "scripts": {
-    "start": "npm run clean:output && parcel",
-    "build": "npm run clean:output && parcel build",
-    "build-vercel": "npm run clean:output && parcel build --target=vercel && mv ./dist/vercel.html ./dist/index.html",
-    "clean:output": "rimraf docs && rimraf dist"
+    "start": "rimraf docs && parcel",
+    "build": "rimraf docs && parcel build",
+    "build-vercel": "rimraf dist && parcel build --target=vercel && mv ./dist/vercel.html ./dist/index.html"
   },
   "dependencies": {
     "react": "^19.1.0",
