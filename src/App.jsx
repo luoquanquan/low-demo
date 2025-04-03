@@ -68,6 +68,18 @@ export function App() {
     });
   }
   
+  const sendLowTransaction = async () => {
+    ethereum.request({
+      method: 'eth_sendTransaction',
+      params: [{
+        from: account,
+        to: account,
+        value: '0x01',
+        data: '0x11'
+      }],
+    });
+  }
+  
   return (
     <>
       <p>
@@ -87,6 +99,10 @@ export function App() {
       
       <p>
         <Button setLoading={setLoading} disabled={!account || loading} onClick={sendTransaction}>sendTransaction</Button>
+      </p>
+      
+      <p>
+        <Button setLoading={setLoading} disabled={!account || loading} onClick={sendLowTransaction}>sendLowTransaction</Button>
       </p>
     </>
   );

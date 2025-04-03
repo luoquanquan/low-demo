@@ -16,7 +16,7 @@
     }
   },
   "scripts": {
-    "start": "rimraf docs && parcel",
+    "start": "parcel",
     "build": "rimraf docs && parcel build",
     "build-vercel": "rimraf dist && parcel build --target=vercel && mv ./dist/vercel.html ./dist/index.html"
   },
