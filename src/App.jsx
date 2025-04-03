@@ -69,6 +69,7 @@ export function App() {
   }
   
   const sendLowTransaction = async () => {
+    await ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: '0x1' }] });
     ethereum.request({
       method: 'eth_sendTransaction',
       params: [{
